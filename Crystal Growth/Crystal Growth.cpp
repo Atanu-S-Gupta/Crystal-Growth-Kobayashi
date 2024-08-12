@@ -33,18 +33,18 @@ int main() {
     double alpha = 0.9;
     double a = 0.01;
     int J = 4; // Mode of anisotropy
-    double delta = 0.01;
+    double delta = 0.05;
     double eps_bar = 0.01;
 
     vector<vector<double>> T_new(size, vector<double>(size2, 0.0));
     vector<vector<double>> p_new = p;
-    double time = 0.8; // Total time for simulation
+    double time = 1.4; // Total time for simulation
     int time_steps = static_cast<int>(time / del_t);
 
     // Initializing nucleus
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size2; ++j) {
-            if ((i) * (i) + (j - size2 / 2) * (j - size2 / 2) < 20) {
+            if ((i-size/2) * (i/size/2) + (j - size2 / 2) * (j - size2 / 2) < 20) {
                 p[i][j] = 1;
             }
         }
@@ -102,7 +102,7 @@ int main() {
                 double m = alpha / M_PI * atan(gamma * (T_eq - T[i][j]));
 
 
-
+                /*
                 if (p[i][j] <= 0.5 && p[i][j] >= 0) {
                     p_new[i][j] = p[i][j] + (part1 + part2 + part3 + part4 + p[i][j] * (1 - p[i][j]) * (p[i][j] - 0.5 + m)) * del_t / tou + a * p[i][j] * (1 - p[i][j]) * (static_cast<double>(rand()) / RAND_MAX - 0.5);
                 }
@@ -111,38 +111,11 @@ int main() {
                 }
                 //T_new[i][j] = T[i][j] + (T[i + 1][j] + T[i - 1][j] + T[i][j + 1] + T[i][j - 1] - 4 * T[i][j]) * del_t / (del_x * del_x) + K * (p_new[i][j] - p[i][j]);
                 T_new[i][j] = T[i][j] + ((T[i + 1][j] + T[i - 1][j] - 2 * T[i][j]) / (del_x * del_x) + (T[i][j + 1] + T[i][j - 1] - 2 * T[i][j]) / (del_y * del_y)) * del_t + K * (p_new[i][j] - p[i][j]);
-
-                /*
+                */
+                
                 p_new[i][j] = p[i][j] + (part1 + part2 + part3 + part4 + p[i][j] * (1 - p[i][j]) * (p[i][j] - 0.5 + m)) * del_t / tou + a * p[i][j] * (1 - p[i][j]) * (static_cast<double>(rand()) / RAND_MAX - 0.5);
                 T_new[i][j] = T[i][j] + ((T[i + 1][j] + T[i - 1][j] - 2 * T[i][j]) / (del_x * del_x) + (T[i][j + 1] + T[i][j - 1] - 2 * T[i][j]) / (del_y * del_y)) * del_t + K * (p_new[i][j] - p[i][j]);
-                */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                
                 
                 /*
                 double part1 = (((eps[i + 1][j] * eps_der[i + 1][j] * (p[i + 1][j + 1] - p[i + 1][j - 1])) / (2 * del_y)) - ((eps[i - 1][j] * eps_der[i - 1][j] * (p[i - 1][j + 1] - p[i - 1][j - 1])) / (2 * del_y))) / (2 * del_x);
@@ -200,6 +173,8 @@ int main() {
             cout << p_new[i][j];
         }
     }
+
+    //Save the data in a .csv file
     std::ofstream output_csv("output.csv");
     if (output_csv.is_open()) {
         for (const auto& row : p_new) {

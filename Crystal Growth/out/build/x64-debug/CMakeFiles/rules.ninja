@@ -47,7 +47,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "D:\Program Files\Microsoft Visual Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -S"G:\Crystal Growth\Crystal Growth" -B"G:\Crystal Growth\Crystal Growth\out\build\x64-debug"
+  command = "D:\Program Files\Microsoft Visual Studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -S"G:\Crystal Growth\Crystal-Growth-Kobayashi\Crystal Growth" -B"G:\Crystal Growth\Crystal-Growth-Kobayashi\Crystal Growth\out\build\x64-debug"
   description = Re-running CMake...
   generator = 1
 

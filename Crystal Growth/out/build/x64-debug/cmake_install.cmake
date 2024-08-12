@@ -1,8 +1,8 @@
-# Install script for directory: G:/Crystal Growth/Crystal Growth
+# Install script for directory: G:/Crystal Growth/Crystal-Growth-Kobayashi/Crystal Growth
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "G:/Crystal Growth/Crystal Growth/out/install/x64-debug")
+  set(CMAKE_INSTALL_PREFIX "G:/Crystal Growth/Crystal-Growth-Kobayashi/Crystal Growth/out/install/x64-debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "G:/Crystal Growth/Crystal Growth/out/build/x64-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "G:/Crystal Growth/Crystal-Growth-Kobayashi/Crystal Growth/out/build/x64-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
