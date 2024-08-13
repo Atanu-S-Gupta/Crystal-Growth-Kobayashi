@@ -9,5 +9,7 @@ To visualize the crystal structure I use MATLAB.
 ![Ice dendrites](https://github.com/Atanu-S-Gupta/Crystal-Growth-Kobayashi/blob/main/2.png)
 ![Ice dendrites](https://github.com/Atanu-S-Gupta/Crystal-Growth-Kobayashi/blob/main/3.png)
 ![Ice dendrites](https://github.com/Atanu-S-Gupta/Crystal-Growth-Kobayashi/blob/main/4.png)
+![Ice dendrites](https://github.com/Atanu-S-Gupta/Crystal-Growth-Kobayashi/blob/main/5.png)
+![Ice dendrites](https://github.com/Atanu-S-Gupta/Crystal-Growth-Kobayashi/blob/main/6.png)
 
 Explicit method for temperature equation and explicit time marching scheme for phase field simulation have been used.
