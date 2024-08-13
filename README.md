@@ -5,4 +5,6 @@ A code was written that solves the two equations - one for temperature evolution
 
 To visualize the crystal structure I use MATLAB.
 
+![alt text](http://url/to/img.png)
+
 Explicit method for temperature equation and explicit time marching scheme for phase field simulation have been used.
