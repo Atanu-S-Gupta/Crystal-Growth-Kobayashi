@@ -100,46 +100,12 @@ int main() {
                 double part4 = pow(eps[i][j], 2) * ((p[i + 1][j] + p[i - 1][j] - 2 * p[i][j]) / pow(del_x, 2) + (p[i][j + 1] + p[i][j - 1] - 2 * p[i][j]) / pow(del_y, 2));
 
                 double m = alpha / M_PI * atan(gamma * (T_eq - T[i][j]));
-
-
-                /*
-                if (p[i][j] <= 0.5 && p[i][j] >= 0) {
-                    p_new[i][j] = p[i][j] + (part1 + part2 + part3 + part4 + p[i][j] * (1 - p[i][j]) * (p[i][j] - 0.5 + m)) * del_t / tou + a * p[i][j] * (1 - p[i][j]) * (static_cast<double>(rand()) / RAND_MAX - 0.5);
-                }
-                else {
-                    p_new[i][j] = p[i][j] + (part1 + part2 + part3 + part4 + p[i][j] * (1 - p[i][j]) * (p[i][j] - 0.5 + m)) * del_t / tou;
-                }
-                //T_new[i][j] = T[i][j] + (T[i + 1][j] + T[i - 1][j] + T[i][j + 1] + T[i][j - 1] - 4 * T[i][j]) * del_t / (del_x * del_x) + K * (p_new[i][j] - p[i][j]);
-                T_new[i][j] = T[i][j] + ((T[i + 1][j] + T[i - 1][j] - 2 * T[i][j]) / (del_x * del_x) + (T[i][j + 1] + T[i][j - 1] - 2 * T[i][j]) / (del_y * del_y)) * del_t + K * (p_new[i][j] - p[i][j]);
-                */
                 
                 p_new[i][j] = p[i][j] + (part1 + part2 + part3 + part4 + p[i][j] * (1 - p[i][j]) * (p[i][j] - 0.5 + m)) * del_t / tou + a * p[i][j] * (1 - p[i][j]) * (static_cast<double>(rand()) / RAND_MAX - 0.5);
                 T_new[i][j] = T[i][j] + ((T[i + 1][j] + T[i - 1][j] - 2 * T[i][j]) / (del_x * del_x) + (T[i][j + 1] + T[i][j - 1] - 2 * T[i][j]) / (del_y * del_y)) * del_t + K * (p_new[i][j] - p[i][j]);
                 
                 
-                /*
-                double part1 = (((eps[i + 1][j] * eps_der[i + 1][j] * (p[i + 1][j + 1] - p[i + 1][j - 1])) / (2 * del_y)) - ((eps[i - 1][j] * eps_der[i - 1][j] * (p[i - 1][j + 1] - p[i - 1][j - 1])) / (2 * del_y))) / (2 * del_x);
-                double part2 = (((eps[i][j + 1] * eps_der[i][j + 1] * (p[i + 1][j + 1] - p[i - 1][j + 1])) / (2 * del_x)) - ((eps[i][j - 1] * eps_der[i][j - 1] * (p[i + 1][j - 1] - p[i - 1][j - 1])) / (2 * del_x))) / (2 * del_y);
-                double part3 = (((eps[i + 1][j] * eps[i + 1][j] - eps[i - 1][j] * eps[i - 1][j]) / (2 * del_x)) * ((p[i + 1][j] - p[i - 1][j]) / (2 * del_x))) + (((eps[i][j + 1] * eps[i][j + 1] - eps[i][j - 1] * eps[i][j - 1]) / (2 * del_y)) * ((p[i][j + 1] - p[i][j - 1]) / (2 * del_y)));
-                double part4 = eps[i][j] * eps[i][j] * (((p[i + 1][j] + p[i - 1][j] - 2 * p[i][j]) / (del_x * del_x)) + ((p[i][j + 1] + p[i][j - 1] - 2 * p[i][j]) / (del_y * del_y)));
-               
- 
 
-                double m = alpha / M_PI * atan(gamma * (T_eq - T[i][j]));
-                */
-
-                /*
-
-                if (p[i][j] <= 0.5 && p[i][j] >= 0) {
-                    p_new[i][j] = p[i][j] + (part1 + part2 + part3 + part4 + p[i][j] * (1 - p[i][j]) * (p[i][j] - 0.5 + m)) * del_t / tou + a * p[i][j] * (1 - p[i][j]) * (static_cast<double>(rand()) / RAND_MAX - 0.5);
-                }
-                else {
-                    p_new[i][j] = p[i][j] + (part1 + part2 + part3 + part4 + p[i][j] * (1 - p[i][j]) * (p[i][j] - 0.5 + m)) * del_t / tou;
-                }
-                //T_new[i][j] = T[i][j] + (T[i + 1][j] + T[i - 1][j] + T[i][j + 1] + T[i][j - 1] - 4 * T[i][j]) * del_t / (del_x * del_x) + K * (p_new[i][j] - p[i][j]);
-                T_new[i][j] = T[i][j] + ((T[i + 1][j] + T[i - 1][j] - 2 * T[i][j]) / (del_x * del_x) + (T[i][j + 1] + T[i][j - 1] - 2 * T[i][j]) / (del_y * del_y)) * del_t + K * (p_new[i][j] - p[i][j]);
-
-                */
 
             }
         }
